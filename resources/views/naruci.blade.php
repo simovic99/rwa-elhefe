@@ -13,26 +13,17 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                            <table border = "1">
-                                <tr>
-                                    <td>naziv</td>
-                                    <td>opis</td>
-                                    <td>cijena</td>
-                                    <td>slika</td>
-
-
-                                </tr>
+                            <div class="large-4 columns">
                                 @foreach ($products as $product)
-                                    <tr>
+                                    <p><h3>{{$product->product_name}}</h3></p>
+                                    <img width="250px" src={{ asset($product->product_img_name)}}/>
 
-                                        <td>{{ $product->product_name }}</td>
-                                        <td>{{ $product->product_desc }}</td>
-                                        <td>{{ $product->price }}</td>
-                                        <td><img src={{ asset('images/'.$product->product_img_name)}}</td>
+                                        <p><strong>Opis: </strong>{{ $product->product_name }}</p>
+                                        <p>Cijena: {{ $product->price }}</p>
 
-                                    </tr>
+
                                 @endforeach
-                            </table>
+                            </div>
 
 
 
