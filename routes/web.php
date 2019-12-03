@@ -18,10 +18,11 @@ Route::get('naruci','ProductsController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
+Route::middleware('auth', 'admin')->get('/home', 'HomeController@index')->name('home');
+
 
