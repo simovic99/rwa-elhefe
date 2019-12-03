@@ -14,15 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('naruci','ProductsController@index');
-
-Auth::routes();
-
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
-Route::middleware('auth', 'admin')->get('/home', 'HomeController@index')->name('home');
+//Route::middleware('auth', 'admin')->get('/home', 'HomeController@index')->name('home');
 
-
+Route::get('naruci','ProductsController@index');

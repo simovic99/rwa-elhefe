@@ -91,11 +91,11 @@
                  <a href="{{url('/naruci')}}">Naruči online</a>
 
                     <a href="/kontakt">Kontakt</a>
-                   @auth
+                    @auth
                         @if(Auth::user()->isAdmin())
                             <a href="{{url('/analitika')}}">Analitika</a>
                         @endif
-                       @endauth
+                    @endauth
 
                 </div>
             </div>
