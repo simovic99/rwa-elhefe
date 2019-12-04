@@ -89,5 +89,6 @@ public function destroy($id)
     DB::delete('delete from users where id = ?',[$id]);
     echo "Record deleted successfully.";
 
+
 }}
 
