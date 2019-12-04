@@ -48,11 +48,15 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Registracija') }}</a>
                             </li>
                         @endif
-                        <h2>Test</h2>
+
                     @else
                         @if(Auth::user()->isAdmin())
                             <h2>Admin</h2>
                         @endif
+                    @if((Auth::user()->isSuperAdmin()))
+                                <h2>Superadmin</h2>
+                            @endif
+
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
