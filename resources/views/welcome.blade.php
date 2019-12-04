@@ -83,7 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   El Hefe
+                    <img src={{ asset('images/icon.png')}}/>
                 </div>
 
                 <div class="links">
@@ -92,9 +92,15 @@
 
                     <a href="/kontakt">Kontakt</a>
                     @auth
-                        @if(Auth::user()->isAdmin())
+                        @if(Auth::user()->isAdmin() )
                             <a href="{{url('/analitika')}}">Analitika</a>
+
                         @endif
+                            @if(Auth::user()->isSuperAdmin() )
+                                <a href="{{url('/analitika')}}">Analitika</a>
+                                <a href="{{url('/korisnici')}}">Upravljanje korisnicima</a>
+                            @endif
+
                     @endauth
 
                 </div>
