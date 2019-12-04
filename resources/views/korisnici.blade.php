@@ -15,16 +15,33 @@
                         @endif
                         @auth
                             @if(Auth::user()->isSuperAdmin())
-
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>Ime</th>
+                                            <th>Email</th>
+                                            <th>Uloga</th>
+                                            <th>Ažuriraj</th>
+                                            <th>Izbriši</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
                             @foreach ($korisnici as $korisnik)
-                                <p>ime :{{$korisnik->name}}</p>
-                                <p>e-mail:{{$korisnik->email}}</p>
+                                <tr>
+                                <td>{{$korisnik->name}}</td>
+                                <td>{{$korisnik->email}}</td>
                             <!--    <p><h3> role :{{$korisnik->role}}</h3></p>-->
-                                @if($korisnik->role==2)<p>role:superadmin</p>
-                                    @elseif($korisnik->role==1)<p>role: admin</p>
-                                    @else (korisnik->role==0)<p>role: korisnik</p>
+                                @if($korisnik->role==2)<td>superadmin</td>
+                                    @elseif($korisnik->role==1)<td>admin</td>
+                                    @else (korisnik->role==0)<td>korisnik</td>
                                     @endif
-                                <hr/>
+                                    <td><a href="edit/{{ $korisnik->id }}"><button class="btn btn-primary">Ažuriraj</button> </a></td>
+                                    <td>
+                                        <a href="delete/{{ $korisnik->id }}"><button class="btn btn-primary">Izbriši</button> </a></td>
+
+                                    </td>
+                                </tr>
+
                             @endforeach
                                 @else NISTE SUPERADMIN
                             @endif
