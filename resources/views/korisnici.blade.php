@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header"><h1>Korisnici</h1></div>
 
@@ -15,7 +15,7 @@
                         @endif
                         @auth
                             @if(Auth::user()->isSuperAdmin())
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered" id="tablica1" >
                                         <thead>
                                         <tr>
                                             <th>Ime</th>

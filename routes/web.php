@@ -24,4 +24,5 @@ Route::get('korisnici','KorisniciController@index');
 Route::get('edit/{id}','KorisniciController@show');
 Route::post('edit/{id}','KorisniciController@edit');
 Route::get('delete/{id}','KorisniciController@destroy');
+Route::get('promjeni','ProductsController@edit');
 

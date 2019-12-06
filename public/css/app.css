@@ -5207,7 +5207,9 @@ input[type=button].btn-block {
 .card-columns .card {
     margin-bottom: 0.75rem;
 }
-
+.columns{
+    display: inline-block;
+}
 @media (min-width: 576px) {
     .card-columns {
         -webkit-column-count: 3;
@@ -11073,6 +11075,7 @@ a.text-dark:focus {
 
     .table {
         border-collapse: collapse !important;
+        text-align: center;
     }
 
     .table td,

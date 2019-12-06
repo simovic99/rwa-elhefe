@@ -1,0 +1,33 @@
+
+.btn-primary {
+    color: #fff;
+    background-color: #e07446;
+
+}
+#tablica1{
+
+    position: relative;
+    background-color:white ;
+    text-align: center;
+
+}
+#columns {
+
+    padding: 0.9375rem;
+    width: 100%;
+    float: left;
+text-align: center;}
+
+
+.large-3 {
+  margin:5%;
+    }
+.tablice{
+    width:100%;
+    text-align: center;
+
+}
+.slike{
+    width:200px;
+    border-radius: 20%;
+}

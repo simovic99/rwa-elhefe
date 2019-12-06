@@ -56,9 +56,15 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
         //
+        $price= $request->input('price');
+
+//$data=array('first_name'=>$first_name,"last_name"=>$last_name,"city_name"=>$city_name,"email"=>$email);
+//DB::table('student')->update($data);
+// DB::table('student')->whereIn('id', $id)->update($request->all());
+        DB::update('update products set price =? where id = ?',[$price]);
     }
 
     /**
