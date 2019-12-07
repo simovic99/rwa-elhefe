@@ -7,7 +7,7 @@
                 <div class="card"  >
                     <div class="card-header"><h1>Naruči</h1></div>
 
-                    <div class="card-body">
+                    <div class="card-body" >
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
@@ -19,7 +19,7 @@
                                   <th><h3>{{$product->product_name}}</h3></th>
                             <tbody><tr><td><img class="slike"  src={{ asset($product->product_img_name)}}/></td></tr>
 
-                                 <tr>     <td><strong>Opis: </strong>{{ $product->product_name }}</td></tr>
+                                 <tr>     <td><strong>Opis: </strong>{{ $product->product_name}}</td></tr>
                          <tr>  <td>Cijena: {{ $product->price }}</td></tr>
                         <tr> <td>   <button class="btn btn-primary">Naruči</button> </td>  </tr>
 

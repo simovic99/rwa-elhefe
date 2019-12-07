@@ -15,33 +15,33 @@
                         @endif
                         @auth
                             @if(Auth::user()->isSuperAdmin())
-                                    <table class="table table-bordered" id="tablica1" >
+                                    @foreach ($korisnici as $korisnik)
+                                        <div class="large-3 columns ">
+                                    <table class="table table-bordered" id="tablice" >
                                         <thead>
                                         <tr>
-                                            <th>Ime</th>
-                                            <th>Email</th>
-                                            <th>Uloga</th>
-                                            <th>Ažuriraj</th>
-                                            <th>Izbriši</th>
-                                        </tr>
-                                        </thead>
+                                            <th>{{$korisnik->name}} </th></tr>
+
                                         <tbody>
-                            @foreach ($korisnici as $korisnik)
+
                                 <tr>
-                                <td>{{$korisnik->name}}</td>
-                                <td>{{$korisnik->email}}</td>
+
+                                    <td><strong>E-mail: </strong> {{$korisnik->email}}</td></tr>
                             <!--    <p><h3> role :{{$korisnik->role}}</h3></p>-->
-                                @if($korisnik->role==2)<td>superadmin</td>
-                                    @elseif($korisnik->role==1)<td>admin</td>
-                                    @else (korisnik->role==0)<td>korisnik</td>
-                                    @endif
-                                    <td><a href="edit/{{ $korisnik->id }}"><button class="btn btn-primary">Ažuriraj</button> </a></td>
-                                    <td>
-                                        <a href="delete/{{ $korisnik->id }}"><button class="btn btn-primary">Izbriši</button> </a></td>
+                                <tr><td> <strong> Uloga: </strong>
+                                @if($korisnik->role==2) superadmin
+                                    @elseif($korisnik->role==1)admin
+                                    @else (korisnik->role==0) korisnik
+                                        @endif</td>
+                                    </tr>
+                                 <tr> <td><a href="edit/{{ $korisnik->id }}"><button class="btn btn-primary">Ažuriraj</button> </a></td>
+                                 </tr>
+                                 <tr><td>       <a href="delete/{{ $korisnik->id }}"><button class="btn btn-primary">Izbriši</button> </a>
 
                                     </td>
                                 </tr>
-
+                                        </tbody>
+                                    </table></div>
                             @endforeach
                                 @else NISTE SUPERADMIN
                             @endif

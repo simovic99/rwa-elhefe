@@ -43,8 +43,9 @@ class User extends Authenticatable
     }
 
 
-public function isSuperAdmin()
-{
-    return $this->role ==2 ;
+    public function isSuperAdmin()
+    {
+        return $this->role ==2 ;
+    }
 }
-}
+

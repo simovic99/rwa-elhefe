@@ -94,11 +94,14 @@
                     @auth
                         @if(Auth::user()->isAdmin() )
                             <a href="{{url('/analitika')}}">Analitika</a>
+                            <a href="{{url('/cijene')}}">Upravljanje ponudom</a>
 
                         @endif
                             @if(Auth::user()->isSuperAdmin() )
                                 <a href="{{url('/analitika')}}">Analitika</a>
                                 <a href="{{url('/korisnici')}}">Upravljanje korisnicima</a>
+                                <a href="{{url('/cijene')}}">Upravljanje ponudom</a>
+
                             @endif
 
                     @endauth

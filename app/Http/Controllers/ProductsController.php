@@ -15,6 +15,7 @@ class ProductsController extends Controller
     public function index()
     {
         $products= DB::select('select product_name,product_desc,price,product_img_name from products');
+
         return view('naruci',['products'=>$products]);
     }
 
