@@ -19,11 +19,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 //Route::middleware('auth', 'admin')->get('/home', 'HomeController@index')->name('home');
 
-Route::get('naruci','ProductsController@index');
+Route::get('naruci','ProductsController@index2');
 Route::get('korisnici','KorisniciController@index');
 Route::get('edit/{id}','KorisniciController@show');
 Route::post('edit/{id}','KorisniciController@edit');
 Route::get('delete/{id}','KorisniciController@destroy');
-Route::get('promjeni','ProductsController@edit');
-Route::get('cijene','uredi@index');
-Route::post('uredi1','uredi@update');
+Route::get('cijene','ProductsController@index');
+Route::post('cijene','ProductsController@edit');
+
+

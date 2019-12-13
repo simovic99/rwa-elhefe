@@ -21,8 +21,12 @@
 
                                     <tr>     <td><strong>Opis: </strong>{{ $product->product_name}}</td></tr>
                                     <tr>  <td>  Cijena:</td> </tr>
-                                    <tr> <td><form action="" method = "post"> <input type="number" name="price" value={{ $product->price }}>KM   </td></tr>
-                                    <tr> <td>   <submit class="btn btn-primary">promjeni</submit></form> </td>  </tr>
+                                    <tr> <td><form action="cijene"  method = "post">
+                                                {{ csrf_field() }}
+                                                <input type="number" name="price" value={{ $product->price }}><input type="hidden" name="id" value={{$product->id}}> </input>KM
+                                             <hr>
+
+                                      <input type="submit" class="btn btn-primary"  value="Promjeni"/></form> </td>  </tr>
 
                                     </tbody>
                                 </table>

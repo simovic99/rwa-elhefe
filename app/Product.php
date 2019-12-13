@@ -19,6 +19,8 @@ class Product extends Model
     /**
      * @var array
      */
-    protected $fillable = ['product_code', 'product_name', 'product_type', 'product_desc', 'product_img_name', 'qty', 'price'];
+    protected $fillable = [ 'product_name', 'product_desc', 'product_img_name', 'qty', 'price'];
+    public $timestamps = false;
+
 
 }
