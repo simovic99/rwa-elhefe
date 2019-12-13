@@ -6,8 +6,8 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" href="{!! asset('images/icon.png') !!}"/>
+    <title>{{ config('El Hefe', 'El Hefe') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -25,7 +25,8 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('El Hefe', 'El Hefe') }}
+                {{ config('Početna', 'Početna') }}
+
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
@@ -52,10 +53,10 @@
 
                     @else
                         @if(Auth::user()->isAdmin())
-                            <h2>Admin</h2>
+                            <h3 class="nav-item">Admin</h3>
                         @endif
                     @if((Auth::user()->isSuperAdmin()))
-                                <h2>Superadmin</h2>
+                                <h3>Superadmin</h3>
                             @endif
 
                         <li class="nav-item dropdown">
