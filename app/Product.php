@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Kyslik\ColumnSortable\Sortable;
 /**
  * @property int $id
  * @property string $product_code
@@ -16,11 +16,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Product extends Model
 {
+    use Sortable;
+
     /**
      * @var array
      */
     protected $fillable = [ 'product_name', 'product_desc', 'product_img_name', 'qty', 'price'];
     public $timestamps = false;
-
+    public $sortable = ['id','product_name','price'];
 
 }

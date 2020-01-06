@@ -6,20 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property int $id
- * @property string $product_code
- * @property string $product_name
- * @property string $product_desc
- * @property int $price
- * @property int $units
- * @property int $total
- * @property string $date
- * @property string $email
+ * @property int $product_id
+ * @property int $user_id
+ *
  */
 class Order extends Model
 {
     /**
      * @var array
      */
-    protected $fillable = ['product_code', 'product_name', 'product_desc', 'price', 'units', 'total', 'date', 'email'];
+    protected $fillable = ['id', 'product_id', 'user_id'];
 
 }

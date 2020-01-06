@@ -11,9 +11,17 @@
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
+
                             </div>
                         @endif
+                        Sortiraj po
+
+                         @sortablelink('price','Cijena')
+                        @sortablelink('product_name','Ime')
+                        <hr>
+
                             @foreach ($products as $product)
+
                             <div class="large-3 columns ">
 <table class="tablice">
                                   <th><h3>{{$product->product_name}}</h3></th>

@@ -5,7 +5,8 @@
         <div class="row justify-content-center" id="naruci">
             <div class="col-md-12" >
                 <div class="card"  >
-                    <div class="card-header"><h1>Ponuda</h1></div>
+                    <div class="card-header"><h1>Ponuda</h1>
+                    <a href="./create">Novi </a></div>
 
                     <div class="card-body" >
                         @if (session('status'))

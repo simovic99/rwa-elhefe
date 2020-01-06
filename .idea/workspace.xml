@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f73e997-7123-4155-b5bd-1c7eab5cec6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rwa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rwa.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/KorisniciController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/KorisniciController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/uredi.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cijene.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cijene.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,6 +137,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/krlove/eloquent-model-generator" />
+      <path value="$PROJECT_DIR$/vendor/darryldecode/cart" />
+      <path value="$PROJECT_DIR$/vendor/hardevine/shoppingcart" />
     </include_path>
   </component>
   <component name="ProjectId" id="1UCsfm8cyZEcQVCsa6DerrdsOZN" />
@@ -252,7 +262,17 @@
       <workItem from="1576154798386" duration="17000" />
       <workItem from="1576245566833" duration="3912000" />
       <workItem from="1576271064488" duration="2749000" />
-      <workItem from="1576273965013" duration="6447000" />
+      <workItem from="1576273965013" duration="8015000" />
+      <workItem from="1576282191929" duration="2387000" />
+      <workItem from="1576489699379" duration="81000" />
+      <workItem from="1576489891820" duration="531000" />
+      <workItem from="1576490782408" duration="75000" />
+      <workItem from="1576662313664" duration="1376000" />
+      <workItem from="1576760158831" duration="105000" />
+      <workItem from="1576854970173" duration="389000" />
+      <workItem from="1578061121740" duration="1170000" />
+      <workItem from="1578152459442" duration="44000" />
+      <workItem from="1578334034914" duration="1785000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1574890867296</created>
@@ -331,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576279153924</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update">
+      <created>1576280588567</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1576280588567</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,11 +388,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update" />
     <MESSAGE value="brisanje i azuriranje korisnika" />
     <MESSAGE value="css" />
     <MESSAGE value="naruci  css" />
     <MESSAGE value="upravljanje cijenama" />
-    <option name="LAST_COMMIT_MESSAGE" value="upravljanje cijenama" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

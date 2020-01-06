@@ -8,8 +8,10 @@ use Illuminate\Support\Facades\DB;
 class KorisniciController extends Controller
 {
    public function index(){
-$korisnici= DB::select('select  id, name,email,role from users');
-return view('korisnici',['korisnici'=>$korisnici]);
+//$korisnici= DB::select('select  id, name,email,role from users');
+
+       $korisnici = DB::table('users')->orderBy('name', 'asc')->get();
+       return view('korisnici',['korisnici'=>$korisnici]);
 
 }
 public function create()

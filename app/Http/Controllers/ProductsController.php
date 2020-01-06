@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -14,24 +15,40 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products= DB::select('select id,product_name,product_desc,price,product_img_name from products');
+        $products=Product::all();
 
         return view('cijene',['products'=>$products]);
     }
     public function index2()
     {
-        $products= DB::select('select  product_name,product_desc,price,product_img_name from products');
+       // $products= DB::select('select  product_name,product_desc,price,product_img_name from products');
+            $products=Product::sortable()->paginate(10);
 
-        return view('naruci',['products'=>$products]);
+        return view('naruci',compact('products'));
+    }
+    public function index3()
+    {
+
+
+        return view('create');
     }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $price= $request->input('price');
+        $product_name=$request->input('product_name');
+        $product_desc=$request->input('product_desc');
+        $product_img_name=$request->input('product_img_name');
+//$data=array('first_name'=>$first_name,"last_name"=>$last_name,"city_name"=>$city_name,"email"=>$email);
+//DB::table('student')->update($data);
+// DB::table('student')->whereIn('id', $id)->update($request->all());
+        DB::insert('insert into products price,product_name,product_desc,product_img_name values ($price,$product_name,$product_desc,$product_img_name)');
+
+        return $this->index();
     }
 
     /**
@@ -85,14 +102,7 @@ class ProductsController extends Controller
      */
     public function update( Request $request)
     {
-        $products =Product::First(); //missed line
-        $products->price = $request['price'];
-
-        $products->save();
-
-        return redirect()->route('cijene')->with('alert-success', ' Success');
     }
-
     /**
      * Remove the specified resource from storage.
      *

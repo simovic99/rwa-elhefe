@@ -26,5 +26,6 @@ Route::post('edit/{id}','KorisniciController@edit');
 Route::get('delete/{id}','KorisniciController@destroy');
 Route::get('cijene','ProductsController@index');
 Route::post('cijene','ProductsController@edit');
-
-
+Route::get('create','ProductsController@index3');
+Route::post('create','ProductsController@create');
+//Route:resources('products','ProductsController');
