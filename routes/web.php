@@ -36,3 +36,4 @@ Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy')
 Route::post('/cart/switchToSaveForLater/{product}', 'CartController@switchToSaveForLater')->name('cart.switchToSaveForLater');
 
 
+
