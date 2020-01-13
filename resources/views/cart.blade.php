@@ -5,7 +5,7 @@
         <div class="row justify-content-center" id="naruci">
             <div class="col-md-12" >
                 <div class="card"  >
-                    <div class="card-header"><h1>KOŠARICA</h1></div>
+                    <div class="card-header"><h1>Moja narudžba</h1></div>
 
                     <div class="card-body" >
 
@@ -16,8 +16,8 @@
                                 <th></th>
                                 <th >Naziv</th>
                                 <th>Količina</th>
-                                <th>Price</th>
-                                <th>Izbriši</th>
+                                <th>Cijena</th>
+                                <th></th>
                             </tr>
                             </thead>
 
@@ -31,29 +31,31 @@
                                     <p><strong><?php echo $row->name; ?></strong></p>
                                     <p><?php echo ($row->options->has('size') ? $row->options->size : ''); ?></p>
                                 </td>
-                                <td><input type="text" value="<?php echo $row->qty; ?>"></td>
+                                <td >
+                                    <input type="number"  value="<?php echo $row->qty; ?>"></td>
                                 <td><?php echo $row->price; ?>KM</td>
 
                                 <td>                            <form action="{{ route('cart.destroy', $row->rowId) }}" method="POST">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 
-                                        <button type="submit" class="cart-options">Remove</button>
+                                        <button type="submit"  class="btn btn-primary">Izbriši</button>
                                     </form>
                                 </td>
                             </tr>
 
-
+                            <tr><td colspan="5"><hr></td> </tr>
                             </tbody>
                             @endforeach
+
                             <tfoot>
 
 
                             <tr>
                                 <td colspan="2">&nbsp;</td>
-                                <td>Total</td>
-                                <td><?php echo Cart::subtotal(); ?></td>
-
+                                <td>Ukupno</td>
+                                <td><?php echo Cart::subtotal(); ?> KM</td>
+                                <td><button  class="btn btn-primary">NARUČI</button></td>
 
                             </tr>
                             </tfoot>
