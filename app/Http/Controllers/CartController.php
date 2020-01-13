@@ -44,7 +44,7 @@ class CartController extends Controller
         if ($duplicates->isNotEmpty()) {
             return redirect()->route('cart.index')->with('success_message', 'Item is already in your cart!');
         }
-        Cart::add($product->id, $product->product_name, 1, $product->price)
+        Cart::add($product->id, $product->product_name, 1, $product->price,$product->product_img_name)
             ->associate('App\Product');
         return redirect()->route('cart.index')->with('success_message', 'Item was added to your cart!');
 

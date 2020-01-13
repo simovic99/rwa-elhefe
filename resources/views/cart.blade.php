@@ -10,8 +10,7 @@
                     <div class="card-body" >
 
 
-                        // Display the content in a View.
-                        <table>
+                        <table class="tablice">
                             <thead>
                             <tr>
                                 <th>slika</th>
@@ -26,7 +25,7 @@
 
                             @foreach(Cart::content() as $row)
 
-                           <td> <?php echo "<img src='$row->product_img_name'/>"; ?></td>
+                           <td> <?php echo "<img class='slike'  width='150px' src='$row->img'/>"; ?></td>
 
                                 <td>
                                     <p><strong><?php echo $row->name; ?></strong></p>
