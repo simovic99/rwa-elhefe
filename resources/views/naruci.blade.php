@@ -30,7 +30,7 @@
 
                                   <th><h3>{{$product->product_name}}</h3></th>
                             <tbody>
-                            <tr><td><img class="slike"  src="{{ asset($product->product_img_name)"}}/></td></tr>
+                            <tr><td><img class="slike"  src="{{ asset($product->product_img_name)}}"/></td></tr>
                                 {{ csrf_field() }}   <input type="hidden" name="id" value="{{$product->id}}"/>
                                 <input type="hidden" name="name" value="{{$product->product_name}}"/>
                                 <input type="hidden" name="price" value="{{$product->price}}"/>
