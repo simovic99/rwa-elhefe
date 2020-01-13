@@ -28,4 +28,11 @@ Route::get('cijene','ProductsController@index');
 Route::post('cijene','ProductsController@edit');
 Route::get('create','ProductsController@index3');
 Route::post('create','ProductsController@create');
-//Route:resources('products','ProductsController');
+//
+Route::get('/cart', 'CartController@index')->name('cart.index');
+Route::post('/cart/{product}', 'CartController@store')->name('cart.store');
+Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
+Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
+Route::post('/cart/switchToSaveForLater/{product}', 'CartController@switchToSaveForLater')->name('cart.switchToSaveForLater');
+
+

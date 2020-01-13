@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+//use Gloudemans\Shoppingcart\Cart;
+use Gloudemans\Shoppingcart\CartItem;
+
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,7 +26,7 @@ class ProductsController extends Controller
     public function index2()
     {
        // $products= DB::select('select  product_name,product_desc,price,product_img_name from products');
-            $products=Product::sortable()->paginate(10);
+            $products=Product::sortable()->paginate(30);
 
         return view('naruci',compact('products'));
     }
@@ -32,6 +36,7 @@ class ProductsController extends Controller
 
         return view('create');
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -57,10 +62,7 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+
 
     /**
      * Display the specified resource.

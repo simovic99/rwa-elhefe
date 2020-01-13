@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
     <div class="container"  >
         <div class="row justify-content-center" id="naruci">
@@ -20,24 +21,36 @@
                         @sortablelink('product_name','Ime')
                         <hr>
 
+
                             @foreach ($products as $product)
 
                             <div class="large-3 columns ">
+                                <form action="{{ route('cart.store', $product) }}" method="POST">
 <table class="tablice">
+
                                   <th><h3>{{$product->product_name}}</h3></th>
-                            <tbody><tr><td><img class="slike"  src={{ asset($product->product_img_name)}}/></td></tr>
+                            <tbody>
+                            <tr><td><img class="slike"  src={{ asset($product->product_img_name)}}/></td></tr>
+                                {{ csrf_field() }}   <input type="hidden" name="id" value="{{$product->id}}"/>
+                                <input type="hidden" name="name" value="{{$product->product_name}}"/>
+                                <input type="hidden" name="price" value="{{$product->price}}"/>
+
+                            <input type="hidden" name="slika" value="{{$product->product_img_name}}"/>
 
                                  <tr>     <td><strong>Opis: </strong>{{ $product->product_name}}</td></tr>
-                         <tr>  <td>Cijena: {{ $product->price }}</td></tr>
-                        <tr> <td>   <button class="btn btn-primary">Naruči</button> </td>  </tr>
+                         <tr>  <td>Cijena: {{ $product->price }} KM</td></tr>
+                        <tr> <td>   <input type="submit" value="Naruči" class="btn btn-primary"/> </td>  </tr>
+
 
                             </tbody>
+
 </table>
 
+                                </form>
                             </div>
+                            <!--  -->
+
                             @endforeach
-
-
 
                     </div>
                 </div>
