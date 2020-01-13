@@ -13,7 +13,7 @@
                         <table class="tablice">
                             <thead>
                             <tr>
-                                <th>S</th>
+                                <th></th>
                                 <th >Naziv</th>
                                 <th>Količina</th>
                                 <th>Price</th>
