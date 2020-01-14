@@ -4,17 +4,21 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * @property int $id
- * @property int $product_id
- * @property int $user_id
- *
- */
 class Order extends Model
 {
-    /**
-     * @var array
-     */
-    protected $fillable = ['id', 'product_id', 'user_id'];
+    //
 
+          protected $fillable = [
+              'user_id', 'billing_email', 'billing_name', 'billing_address', 'billing_city',
+             'billing_phone', 'billing_total',
+          ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+    public function products()
+    {
+        return $this->belongsToMany('App\Product')->withPivot('quantity');
+    }
 }

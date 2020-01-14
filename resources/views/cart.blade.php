@@ -52,7 +52,8 @@
 
 
                             <tr>
-                                <td colspan="2">&nbsp;</td>
+                                <td ><a href="./naruci"><button class="btn btn-primary">Povratak na ponudu</button></a></td>
+                                <td></td>
                                 <td>Ukupno</td>
                                 <td><?php echo Cart::subtotal(); ?> KM</td>
                                 <td><button  class="btn btn-primary">NARUČI</button></td>
