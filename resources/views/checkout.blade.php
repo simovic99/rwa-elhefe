@@ -27,15 +27,17 @@
             </div>
         @endif
 
-        <h1 class="checkout-heading stylish-heading">Checkout</h1>
+        <div class="card"  >
+            <div class="card-header"><h1>Detalji narudžbe</h1></div>
+
+            <div class="card-body" >
         <div class="checkout-section">
             <div>
                 <form action="{{ route('checkout.store') }}" method="POST" id="payment-form">
                     {{ csrf_field() }}
-                    <h2>Detalji narudžbe</h2>
 
                     <div class="form-group">
-                        <label for="email">Email Address</label>
+                        <label for="email">E-mail adresa</label>
                         @if (auth()->user())
                             <input type="email" class="form-control" id="email" name="email" value="{{ auth()->user()->email }}" readonly>
                         @else
@@ -43,17 +45,17 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Ime</label>
                         <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="address">Address</label>
+                        <label for="address">Adresa</label>
                         <input type="text" class="form-control" id="address" name="address" value="{{ old('address') }}" required>
                     </div>
 
                     <div class="half-form">
                         <div class="form-group">
-                            <label for="city">City</label>
+                            <label for="city">Grad</label>
                             <input type="text" class="form-control" id="city" name="city" value="Ljubuški" readonly>
                         </div>
 
@@ -62,7 +64,7 @@
                     <div class="half-form">
 
                         <div class="form-group">
-                            <label for="phone">Phone</label>
+                            <label for="phone">Telefon</label>
                             <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone') }}" required>
                             <input type="hidden" class="form-control" name="total" value="{{Cart::Subtotal()}}"/>
                         </div>
@@ -79,55 +81,53 @@
                     </div>
                     <div class="spacer"></div>
 
-                    <button type="submit" id="complete-order" class="button-primary full-width">Dovrši narudžbu</button>
+                    <button type="submit" id="complete-order" class="btn btn-primary">Dovrši narudžbu</button>
 
 
                 </form>
 
-
+<hr>
             </div>
 
 
 
             <div class="checkout-table-container">
-                <h2>Your Order</h2>
+                <h2>Vaša narudžba</h2>
+                <hr>
+                @foreach(Cart::content() as $row)
+                <table class="tablice">
+<tr>
+                <td> <?php echo "<img class='slike'  width='150px' src='$row->img'/>"; ?></td>
 
-                <div class="checkout-table">
-                    @foreach (Cart::content() as $item)
-                        <div class="checkout-table-row">
-                            <div class="checkout-table-row-left">
-                                <img src="{{$item->img }}" alt="item" class="checkout-table-img">
-                                <div class="checkout-item-details">
-                                    <div class="checkout-table-item">{{ $item->model->name }}</div>
+                     <td>
+                         <p><strong><?php echo $row->name; ?></strong></p>
+                         <p><?php echo ($row->options->has('size') ? $row->options->size : ''); ?></p>
+                     </td>
+                     <td >
+                         <input type="number"  value="<?php echo $row->qty; ?>"></td>
+                     <td><?php echo $row->price; ?>KM</td>
 
-                                    <div class="checkout-table-price">{{ $item->price }}</div>
-                                </div>
-                            </div> <!-- end checkout-table -->
+                     <td>                            <form action="{{ route('cart.destroy', $row->rowId) }}" method="POST">
+                             {{ csrf_field() }}
+                             {{ method_field('DELETE') }}
 
-                            <div class="checkout-table-row-right">
-                                <div class="checkout-table-quantity">{{ $item->qty }}</div>
-                            </div>
-                        </div> <!-- end checkout-table-row -->
-                    @endforeach
+                             <button type="submit"  class="btn btn-primary">Izbriši</button>
+                         </form>
+                     </td>
+                 </tr>
 
-                </div> <!-- end checkout-table -->
+                 <tr><td colspan="5"><hr></td> </tr>
+                 </tbody></table>
+                 @endforeach
 
                 <div class="checkout-totals">
-                    <div class="checkout-totals-left">
-                        Subtotal <br>
-                        @if (session()->has('coupon'))
-                            Discount ({{ session()->get('coupon')['name'] }}) :
-                            <br>
-                            <hr>
-                            New Subtotal <br>
-                        @endif
-                        Tax ({{config('cart.tax')}}%)<br>
-                        <span class="checkout-totals-total">Total</span>
+                  <h4>  <div class="checkout-totals-left">
+                   Ukupno <br></h4>
 
                     </div>
 
                     <div class="checkout-totals-right">
-                        {{ Cart::subtotal()}} <br>
+                     <h4>   {{ Cart::subtotal()}} KM<br></h4>
 
 
 
@@ -136,6 +136,9 @@
             </div>
 
         </div> <!-- end checkout-section -->
+        </div>
+    </div>
+</div>
     </div>
 
 @endsection

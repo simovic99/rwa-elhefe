@@ -56,7 +56,7 @@
                                 <td></td>
                                 <td>Ukupno</td>
                                 <td><?php echo Cart::subtotal(); ?> KM</td>
-                                <td><button  class="btn btn-primary">NARUČI</button></td>
+                                <td><a href="{{ route('checkout.index') }}" ><button  class="btn btn-primary"> NARUČI</button></a></td>
 
                             </tr>
                             </tfoot>

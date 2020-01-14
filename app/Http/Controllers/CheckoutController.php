@@ -38,7 +38,7 @@ class CheckoutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CheckoutRequest $request)
+    public function store(Request $request)
     {
         // Check race condition when there are less items available to purchase
         if ($this->productsAreNoLongerAvailable()) {
