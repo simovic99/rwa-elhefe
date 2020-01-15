@@ -18,7 +18,7 @@
                             <div class="large-3 columns ">
                                 <table class="tablice">
                                     <th><h3>{{$product->product_name}}</h3></th>
-                                    <tbody><tr><td><img class="slike"  src={{ asset($product->product_img_name)}}/></td></tr>
+                                    <tbody><tr><td><img class="slike"  src="{{ asset($product->product_img_name)}}"/></td></tr>
 
                                     <tr>     <td><strong>Opis: </strong>{{ $product->product_name}}</td></tr>
                                     <tr>  <td>  Cijena:</td> </tr>

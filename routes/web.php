@@ -19,7 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 //Route::middleware('auth', 'admin')->get('/home', 'HomeController@index')->name('home');
 
-Route::get('naruci','ProductsController@index2');
+Route::get('naruci','ProductsController@index2')->name('shop.index');
 Route::get('korisnici','KorisniciController@index');
 Route::get('edit/{id}','KorisniciController@show');
 Route::post('edit/{id}','KorisniciController@edit');
@@ -27,6 +27,7 @@ Route::get('delete/{id}','KorisniciController@destroy');
 Route::get('cijene','ProductsController@index');
 Route::post('cijene','ProductsController@edit');
 Route::get('create','ProductsController@index3');
+Route::get('about','ConfirmationController@about');
 Route::post('create','ProductsController@create');
 //
 Route::get('/cart', 'CartController@index')->name('cart.index');
@@ -37,5 +38,5 @@ Route::post('/cart/switchToSaveForLater/{product}', 'CartController@switchToSave
 
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
-
+Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
 

@@ -89,10 +89,11 @@
                 </div>
 
                 <div class="links">
-                    <a href="#">Pocetna</a>
+                    <a href="{{url('/about')}}">O projektu</a>
+
                  <a href="{{url('/naruci')}}">Naruči online</a>
 
-                    <a href="/kontakt">Kontakt</a>
+                    <a href="./cart">Košarica</a>
                     @auth
                         @if(Auth::user()->isAdmin() )
 

@@ -6,7 +6,7 @@ use App\OrderProduct;
 use App\Mail\OrderPlaced;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-use App\Http\Requests\CheckoutRequest;
+use App\Http\CheckoutRequest;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Cartalyst\Stripe\Exception\CardErrorException;
@@ -40,37 +40,18 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        // Check race condition when there are less items available to purchase
-        if ($this->productsAreNoLongerAvailable()) {
-            return back()->withErrors('Sorry! One of the items in your cart is no longer avialble.');
-        }
         $contents = Cart::content()->map(function ($item) {
             return $item->model->slug.', '.$item->qty;
         })->values()->toJson();
-        try {
-            $charge = Stripe::charges()->create([
-                'amount' => getNumbers()->get('newTotal') / 100,
-                'currency' => 'CAD',
-                'source' => $request->stripeToken,
-                'description' => 'Order',
-                'receipt_email' => $request->email,
-                'metadata' => [
-                    'contents' => $contents,
-                    'quantity' => Cart::instance('default')->count(),
 
-                ],
-            ]);
-            $order = $this->addToOrdersTables($request, null);
-            Mail::send(new OrderPlaced($order));
+            $order = $this->addToOrdersTables($request);
+         //   Mail::send(new OrderPlaced($order));
             // decrease the quantities of all the products in the cart
             $this->decreaseQuantities();
             Cart::instance('default')->destroy();
             session()->forget('coupon');
             return redirect()->route('confirmation.index')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
-        } catch (CardErrorException $e) {
-            $this->addToOrdersTables($request, $e->getMessage());
-            return back()->withErrors('Error! ' . $e->getMessage());
-        }
+
     }
     /**
      * Store a newly created resource in storage.
@@ -110,15 +91,5 @@ class CheckoutController extends Controller
             $product = Product::find($item->model->id);
             $product->update(['quantity' => $product->quantity - $item->qty]);
         }
-    }
-    protected function productsAreNoLongerAvailable()
-    {
-        foreach (Cart::content() as $item) {
-            $product = Product::find($item->model->id);
-            if ($product->quantity < $item->qty) {
-                return true;
-            }
-        }
-        return false;
     }
 }
