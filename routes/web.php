@@ -39,4 +39,4 @@ Route::post('/cart/switchToSaveForLater/{product}', 'CartController@switchToSave
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
-
+//URL::forceRootUrl('http://studenti.sum.ba/projekti/fsre/2019/g7');

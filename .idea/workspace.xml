@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7f73e997-7123-4155-b5bd-1c7eab5cec6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_14_214250_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_14_214250_create_orders_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_14_215036_create_table_ordersproduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_14_215036_create_table_ordersproduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/checkout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/checkout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cijene.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cijene.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -292,7 +285,7 @@
       <workItem from="1579088175917" duration="19000" />
       <workItem from="1579088217384" duration="1269000" />
       <workItem from="1579090051462" duration="1782000" />
-      <workItem from="1579091873823" duration="909000" />
+      <workItem from="1579091873823" duration="1036000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1574890867296</created>
@@ -434,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578956990178</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="dovrši narudžbu">
+      <created>1579092845833</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1579092845833</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -470,6 +470,7 @@
     <MESSAGE value="upravljanje cijenama" />
     <MESSAGE value="sort" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="dovrši narudžbu" />
+    <option name="LAST_COMMIT_MESSAGE" value="dovrši narudžbu" />
   </component>
 </project>
