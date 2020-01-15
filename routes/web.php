@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
+
 //Route::middleware('auth', 'admin')->get('/home', 'HomeController@index')->name('home');
 
 Route::get('naruci','ProductsController@index2')->name('shop.index');
@@ -39,4 +40,11 @@ Route::post('/cart/switchToSaveForLater/{product}', 'CartController@switchToSave
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
 Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
+Route::middleware('auth')->group(function () {
+
+    Route::get('/my-orders', 'OrdersController@index')->name('orders.index');
+    Route::get('/my-orders/{order}', 'OrdersController@show')->name('orders.show');
+});
+
 //URL::forceRootUrl('http://studenti.sum.ba/projekti/fsre/2019/g7');
+
