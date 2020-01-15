@@ -33,10 +33,18 @@ text-align: center;
 
 
 }
+.tablica{
+    width:100%;
+    align:center;
 
+}
 
 .slike{
     width:200px;
+    border-radius: 20%;
+}
+.slike1{
+    width:150px;
     border-radius: 20%;
 }
 .card-header{

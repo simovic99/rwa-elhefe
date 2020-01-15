@@ -10,7 +10,7 @@
                     <div class="card-body">
                        Vaša narudžba je zaprimljena.<br>
                         Hvala Vam na povjerenju.<br>
-                        <a href="../public"><button class="btn btn-primary">Početna</button></a>
+                        <a href="{{ route('welcome') }}"><button class="btn btn-primary">Početna</button></a>
 
 
                     </div>

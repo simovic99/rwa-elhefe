@@ -1,10 +1,8 @@
 <?php
-
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-
-class CreateTableOrdersproduct extends Migration
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+class CreateOrderProductTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +11,7 @@ class CreateTableOrdersproduct extends Migration
      */
     public function up()
     {
-        Schema::create('orderproduct', function (Blueprint $table) {
+        Schema::create('order_product', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('order_id')->unsigned()->nullable();
             $table->foreign('order_id')->references('id')
@@ -25,7 +23,6 @@ class CreateTableOrdersproduct extends Migration
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -33,6 +30,6 @@ class CreateTableOrdersproduct extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orderproduct');
+        Schema::dropIfExists('order_product');
     }
 }

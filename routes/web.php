@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
@@ -43,7 +43,7 @@ Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.inde
 Route::middleware('auth')->group(function () {
 
     Route::get('/my-orders', 'OrdersController@index')->name('orders.index');
-    Route::get('/my-orders/{order}', 'OrdersController@show')->name('orders.show');
+    Route::get('/my-order/{order}', 'OrdersController@show')->name('orders.show');
 });
 
 //URL::forceRootUrl('http://studenti.sum.ba/projekti/fsre/2019/g7');

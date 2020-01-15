@@ -93,7 +93,8 @@
 
                  <a href="{{url('/naruci')}}">Naruči online</a>
 
-                    <a href="./cart">Košarica</a>
+                    <a href="{{ route('cart.index') }}">Košarica</a>
+                    <a href="{{ route('orders.index') }}">Moje narudžbe</a>
                     @auth
                         @if(Auth::user()->isAdmin() )
 
