@@ -48,7 +48,6 @@ class ProductsController extends Controller
           $product=Product::create([
             'price' => $request->price,
             'product_img_name' => $request->product_img_name,
-            'qty' => 1,
             'product_desc' => $request->product_desc,
     ]);
           return $product;

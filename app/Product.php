@@ -16,7 +16,7 @@ use Gloudemans\Shoppingcart\Contracts\Buyable;
  * @property string $product_type
  * @property string $product_desc
  * @property string $product_img_name
- * @property int $qty
+
  * @property float $price
  */
 class Product extends Model implements Buyable
@@ -26,7 +26,7 @@ class Product extends Model implements Buyable
     /**ph
      * @var array
      */
-    protected $fillable = [ 'product_name', 'product_desc', 'product_img_name', 'qty', 'price'];
+    protected $fillable = [ 'product_name', 'product_desc', 'product_img_name',  'price'];
     public $timestamps = false;
     public $sortable = ['id','product_name','price'];
     public function getBuyableIdentifier($options = null) {

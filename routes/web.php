@@ -29,7 +29,7 @@ Route::get('cijene','ProductsController@index');
 Route::post('cijene','ProductsController@edit');
 Route::get('create','ProductsController@index3');
 Route::get('about','ConfirmationController@about');
-Route::post('cijene','ProductsController@store')->name('spremi');
+//Route::post('create','ProductsController@store')->name('spremi');
 //
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart/{product}', 'CartController@store')->name('cart.store');
