@@ -9,7 +9,7 @@
 
                     <div class="card-body">
 
-                        <form action="create" id="form1"method="post">
+                        <form action="{{route('spremi')}}" id="form1"method="post">
                             <table class="table-responsive-xl">
                                 <tr>  <td> Naziv </td> <td><input type="text" name="product_name" /> </td></tr>
                                 <tr> <td>   Opis     </td> <td>      <input type="text" name="product_desc"/> </td></tr>

@@ -42,20 +42,18 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create1( $request)
     {
-        $price= $request->input('price');
-        $product_name=$request->input('product_name');
-        $product_desc=$request->input('product_desc');
-        $product_img_name=$request->input('product_img_name');
-//$data=array('first_name'=>$first_name,"last_name"=>$last_name,"city_name"=>$city_name,"email"=>$email);
-//DB::table('student')->update($data);
-// DB::table('student')->whereIn('id', $id)->update($request->all());
-        DB::insert('insert into products price,product_name,product_desc,product_img_name values ($price,$product_name,$product_desc,$product_img_name)');
 
-        return $this->index();
-    }
+          $product=Product::create([
+            'price' => $request->price,
+            'product_img_name' => $request->product_img_name,
+            'qty' => 1,
+            'product_desc' => $request->product_desc,
+    ]);
+          return $product;
 
+}
     /**
      * Store a newly created resource in storage.
      *
@@ -74,6 +72,11 @@ class ProductsController extends Controller
     {
         //
     }
+    public function store(Request $request)
+{
+      $product=  $this->create1($request);
+        return view('cijene');
+}
 
     /**
      * Show the form for editing the specified resource.

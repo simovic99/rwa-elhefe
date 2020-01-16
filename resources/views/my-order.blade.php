@@ -15,8 +15,9 @@
 
         <div class="card-body" >
 
-                <a href="{{ route('orders.index') }}">Moje narudžbe </a>
-
+                <a href="{{ route('orders.index') }}"><button class="btn btn-primary">Povratak na moje narudžbe </button></a>
+                    <br>
+                    <br>
                         <table  class="tablice table-striped">
                             <tbody>
                             <tr><td>Order ID:</td><td> {{ $order->id }}</td></tr>

@@ -73,6 +73,22 @@ class OrdersController extends Controller
     {
         //
     }
+    public function admin()
+    {
+        $orders =Order::sortable()->paginate(30);; // fix n + 1 issues
+        return view('all-orders')->with('orders', $orders);
+
+
+    }
+    public function adminshow(Order $order)
+    {
+
+        $products = $order->products;
+        return view('all-order')->with([
+            'order' => $order,
+            'products' => $products,
+        ]);
+    }
     /**
      * Remove the specified resource from storage.
      *

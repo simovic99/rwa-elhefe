@@ -99,13 +99,14 @@
                         @if(Auth::user()->isAdmin() )
 
                             <a href="{{url('/cijene')}}">Upravljanje ponudom</a>
+                            <a href="{{route('all-orders')}}">Sve narudžbe</a>
 
                         @endif
                             @if(Auth::user()->isSuperAdmin() )
 
                                 <a href="{{url('/korisnici')}}">Upravljanje korisnicima</a>
                                 <a href="{{url('/cijene')}}">Upravljanje ponudom</a>
-
+                                <a href="{{route('all-orders')}}">Sve narudžbe</a>
                             @endif
 
                     @endauth
