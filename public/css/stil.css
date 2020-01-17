@@ -123,6 +123,9 @@ body {
     text-align: center;
 
 }
+
+
+
 .cijena{
     width:30%;
 
@@ -130,6 +133,14 @@ body {
     color: #e07446;
     text-align: center;
 }
+@media only screen and (min-width:1200px){
+.large-3 {
+
+    width: 20%;
+}
+.columns{
+    display: inline-block;
+}}
 @media only screen and (max-width:374px) {
     .slike{
         width:150px;
