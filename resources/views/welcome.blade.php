@@ -11,7 +11,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link href="css/stil.css" rel="stylesheet">
+        <link href="{{ asset('css/stil.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -65,6 +65,15 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            @media only screen and (max-width:600px) {
+                .links > a {
+                    display: block;
+
+                }
+            }
+
+
+
         </style>
     </head>
     <body>
