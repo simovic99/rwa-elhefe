@@ -10,6 +10,8 @@ use App\Http\CheckoutRequest;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Cartalyst\Stripe\Laravel\Facades\Stripe;
 use Cartalyst\Stripe\Exception\CardErrorException;
+use Illuminate\Support\Facades\Validator;
+
 class CheckoutController extends Controller
 {
     /**
@@ -47,7 +49,7 @@ class CheckoutController extends Controller
             $order = $this->addToOrdersTables($request);
          //   Mail::send(new OrderPlaced($order));
             // decrease the quantities of all the products in the cart
-            $this->decreaseQuantities();
+
             Cart::instance('default')->destroy();
             session()->forget('coupon');
             return redirect()->route('confirmation.index')->with('success_message', 'Thank you! Your payment has been successfully accepted!');
@@ -59,7 +61,20 @@ class CheckoutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), [
+            'quantity' => 'required|numeric|between:1,7'
+        ]);
+        if ($validator->fails()) {
+            session()->flash('errors', collect(['Količina  mora biti između 1 i 7.']));
+            return redirect()->route('checkout.index');
+        }
 
+        Cart::update($id, $request->quantity);
+        session()->flash('success_message', 'Quantity was updated successfully!');
+        return redirect()->route('checkout.index')->with('success_message', 'Količina promjenjena!');
+    }
     protected function addToOrdersTables($request)
     {
         // Insert into orders table

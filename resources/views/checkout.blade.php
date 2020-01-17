@@ -79,12 +79,11 @@
                 <div id="card-errors" role="alert"></div>
                 <div class="spacer"></div>
 
-                    <input type="submit" id="complete-order" class="btn btn-primary" value="Dovrši narudžbu"/>
+                 <input type="submit" id="complete-order" class="btn btn-primary" value="Dovrši narudžbu"/>
 
+       </form>
 
-                </form>
-
-<hr>
+            <hr>
             </div>
 
 
@@ -101,8 +100,9 @@
                          <p><strong><?php echo $row->name; ?></strong></p>
                          <p><?php echo ($row->options->has('size') ? $row->options->size : ''); ?></p>
                      </td>
-                     <td >
-                         <input type="number"  value="<?php echo $row->qty; ?>"></td>
+    <td ><form  method="get" action ="{{route('checkout.update',$row->rowId)}}">
+            <input type="number"  name="quantity"  value="<?php echo $row->qty; ?>"/><input type ="submit" value="✓"class="btn btn-primary "/></td>
+    </form>
                      <td><?php echo $row->price; ?>KM</td>
 
                      <td>                            <form action="{{ route('cart.destroy', $row->rowId) }}" method="POST">

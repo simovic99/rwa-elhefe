@@ -2,6 +2,24 @@
 @section('content')
 
     <div class="container"  >
+        @if (session()->has('success_message'))
+            <div class="spacer"></div>
+            <div class="alert alert-success">
+                {{ session()->get('success_message') }}
+            </div>
+        @endif
+
+        @if(count($errors) > 0)
+            <div class="spacer"></div>
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{!! $error !!}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <div class="row justify-content-center" id="naruci">
             <div class="col-md-12" >
                 <div class="card"  >
@@ -31,8 +49,9 @@
                                     <p><strong><?php echo $row->name; ?></strong></p>
                                     <p><?php echo ($row->options->has('size') ? $row->options->size : ''); ?></p>
                                 </td>
-                                <td >
-                                    <input type="number"  value="<?php echo $row->qty; ?>"></td>
+                                <td ><form  method="get" action ="{{route('cart.update',$row->rowId)}}">
+                                    <input type="number"  name="quantity"  value="<?php echo $row->qty; ?>"/><input type ="submit" value="✓"class="btn btn-primary "/></td>
+                           </form>
                                 <td><?php echo $row->price; ?>KM</td>
 
                                 <td>                            <form action="{{ route('cart.destroy', $row->rowId) }}" method="POST">
@@ -55,7 +74,7 @@
                                 <td ><a href="./naruci"><button class="btn btn-primary">Povratak na ponudu</button></a></td>
                                 <td></td>
                                 <td>Ukupno</td>
-                                <td><?php echo Cart::subtotal(); ?> KM</td>
+                                <td>{{Cart::subtotal()}} KM</td>
                                 <td><a href="{{ route('checkout.index') }}" ><button  class="btn btn-primary"> NARUČI</button></a></td>
 
                             </tr>

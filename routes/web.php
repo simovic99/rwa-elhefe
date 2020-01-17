@@ -29,16 +29,17 @@ Route::get('cijene','ProductsController@index');
 Route::post('cijene','ProductsController@edit');
 Route::get('create','ProductsController@index3');
 Route::get('about','ConfirmationController@about');
-//Route::post('create','ProductsController@store')->name('spremi');
+Route::post('create','ProductsController@store')->name('spremi');
 //
 Route::get('/cart', 'CartController@index')->name('cart.index');
 Route::post('/cart/{product}', 'CartController@store')->name('cart.store');
-Route::patch('/cart/{product}', 'CartController@update')->name('cart.update');
+Route::get('/cart/{product}', 'CartController@update')->name('cart.update');
 Route::delete('/cart/{product}', 'CartController@destroy')->name('cart.destroy');
 Route::post('/cart/switchToSaveForLater/{product}', 'CartController@switchToSaveForLater')->name('cart.switchToSaveForLater');
 
 Route::get('/checkout', 'CheckoutController@index')->name('checkout.index')->middleware('auth');
 Route::post('/checkout', 'CheckoutController@store')->name('checkout.store');
+Route::get('/checkout/{product}', 'CheckoutController@update')->name('checkout.update');
 Route::get('/thankyou', 'ConfirmationController@index')->name('confirmation.index');
 Route::middleware('auth')->group(function () {
 

@@ -43,11 +43,11 @@ class CartController extends Controller
         });
         if ($duplicates->isNotEmpty()) {
 
-            return redirect()->route('cart.index')->with('success_message', 'Item is already in your cart!');
+            return redirect()->route('cart.index')->with('success_message', 'Artikal je već u vašoj narudžbi');
         }
         Cart::add($product->id, $product->product_name, 1, $product->price,$product->product_img_name)
             ->associate('App\Product');
-        return redirect()->route('cart.index')->with('success_message', 'Item was added to your cart!');
+        return redirect()->route('cart.index')->with('success_message', 'Artikal je dodan u vašu košaricu!');
 
     }
     /**
@@ -82,19 +82,16 @@ class CartController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'quantity' => 'required|numeric|between:1,5'
+            'quantity' => 'required|numeric|between:1,7'
         ]);
         if ($validator->fails()) {
-            session()->flash('errors', collect(['Quantity must be between 1 and 5.']));
-            return response()->json(['success' => false], 400);
+            session()->flash('errors', collect(['Količina mora biti između 1 i 7']));
+            return redirect()->route('cart.index')->with('success_message', 'Količina mora biti između 1 i 7!');
         }
-        if ($request->quantity > $request->productQuantity) {
-            session()->flash('errors', collect(['We currently do not have enough items in stock.']));
-            return response()->json(['success' => false], 400);
-        }
+
         Cart::update($id, $request->quantity);
-        session()->flash('success_message', 'Quantity was updated successfully!');
-        return response()->json(['success' => true]);
+        session()->flash('success_message', 'Količina promjenjena!');
+       return redirect()->route('cart.index')->with('success_message', 'Količina promjenjena!');
     }
 
 
