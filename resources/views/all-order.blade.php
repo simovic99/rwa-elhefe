@@ -68,7 +68,7 @@
 
                     @foreach($products as $product)
                         <tr>
-                            <td><img class="slike"  src="{{ asset($product->product_img_name)}}"/></td>
+                            <td><img class="slike1"  src="{{ asset($product->product_img_name)}}"/></td>
 
                             <td>
                                 <p><strong>{{$product->product_name}}</p>
