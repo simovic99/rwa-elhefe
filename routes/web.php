@@ -21,7 +21,7 @@ Auth::routes();
 //Route::middleware('auth', 'admin')->get('/home', 'HomeController@index')->name('home');
 
 Route::get('naruci','ProductsController@index2')->name('shop.index');
-Route::get('korisnici','KorisniciController@index');
+Route::get('korisnici','KorisniciController@index')->name('korisnici');
 Route::get('edit/{id}','KorisniciController@show');
 Route::post('edit/{id}','KorisniciController@edit');
 Route::get('delete/{id}','KorisniciController@destroy');

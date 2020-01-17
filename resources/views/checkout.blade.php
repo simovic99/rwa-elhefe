@@ -94,14 +94,14 @@
                 @foreach(Cart::content() as $row)
                 <table class="tablice">
 <tr>
-                <td> <?php echo "<img class='slike'  width='150px' src='$row->img'/>"; ?></td>
+                <td> <?php echo "<img class='slike1'  width='150px' src='$row->img'/>"; ?></td>
 
                      <td>
                          <p><strong><?php echo $row->name; ?></strong></p>
                          <p><?php echo ($row->options->has('size') ? $row->options->size : ''); ?></p>
                      </td>
     <td ><form  method="get" action ="{{route('checkout.update',$row->rowId)}}">
-            <input type="number"  name="quantity"  value="<?php echo $row->qty; ?>"/><input type ="submit" value="✓"class="btn btn-primary "/></td>
+            <input type="number" class="kolicina" name="quantity"  value="<?php echo $row->qty; ?>"/>&nbsp;&nbsp;<input type ="submit" value="✓"class="btn btn-primary "/></td>
     </form>
                      <td><?php echo $row->price; ?>KM</td>
 

@@ -31,7 +31,7 @@
                         <table class="tablice">
                             <thead>
                             <tr>
-                                <th></th>
+                                <th class="sakrij"></th>
                                 <th >Naziv</th>
                                 <th>Količina</th>
                                 <th>Cijena</th>
@@ -43,14 +43,14 @@
 
                             @foreach(Cart::content() as $row)
 
-                           <td> <?php echo "<img class='slike'  width='150px' src='$row->img'/>"; ?></td>
+                           <td class="sakrij"> <?php echo "<img class='slike1'   src='$row->img'/>"; ?></td>
 
                                 <td>
                                     <p><strong><?php echo $row->name; ?></strong></p>
                                     <p><?php echo ($row->options->has('size') ? $row->options->size : ''); ?></p>
                                 </td>
                                 <td ><form  method="get" action ="{{route('cart.update',$row->rowId)}}">
-                                    <input type="number"  name="quantity"  value="<?php echo $row->qty; ?>"/><input type ="submit" value="✓"class="btn btn-primary "/></td>
+                                    <input type="number" class="kolicina" name="quantity"  value="<?php echo $row->qty; ?>"/>&nbsp;&nbsp;<input type ="submit" value="✓"class="btn btn-primary tipka "/></td>
                            </form>
                                 <td><?php echo $row->price; ?>KM</td>
 
@@ -71,11 +71,11 @@
 
 
                             <tr>
-                                <td ><a href="./naruci"><button class="btn btn-primary">Povratak na ponudu</button></a></td>
-                                <td></td>
+                                <td ><a href="{{route('shop.index')}}"><button class="btn btn-primary">Ponuda</button></a></td>
+                                <td class="sakrij"></td>
                                 <td>Ukupno</td>
                                 <td>{{Cart::subtotal()}} KM</td>
-                                <td><a href="{{ route('checkout.index') }}" ><button  class="btn btn-primary"> NARUČI</button></a></td>
+                                <td><a href="{{ route('checkout.index') }}" ><button  class="btn btn-primary"> Naruči</button></a></td>
 
                             </tr>
                             </tfoot>

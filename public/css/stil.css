@@ -20,7 +20,17 @@ text-align: center;
 
 
 }
+body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #e07446;
 
+    text-align: left;
+    background-color: rgb(40,35,41);
+}
 
 .large-3 {
   margin:5%;
@@ -54,5 +64,43 @@ text-align: center;
 .card-body{
     text-align: center;
 }
+.kolicina{
+    width:10%;
+    border-radius: 20%;
+    color: #e07446;
+    text-align: center;
 
+}
+.cijena{
+    width:30%;
 
+    border-radius: 20%;
+    color: #e07446;
+    text-align: center;
+}
+@media only screen and (max-width:374px) {
+    .slike1{
+        width:50px;
+    }
+    .tablice{
+        width:100%;
+}
+    .card{
+        width:100%;
+    }
+    .sakrij{
+        display:none;
+    }
+ .kolicina{
+     width:25%;
+ }
+}
+@media only screen and (min-width:374px) and (max-width:600px ){
+    .slike1{
+        width:50px;
+
+    }
+    .kolicina{
+        width:25%;
+    }
+}
