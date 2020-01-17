@@ -174,3 +174,22 @@ body {
     }
 
 }
+.links  {
+    color: #e07446;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+@media only screen and (max-width:600px) {
+    .links  {
+        display: block;
+
+    }
+}

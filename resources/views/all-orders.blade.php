@@ -10,12 +10,13 @@
         <div class="card"  >
             <div class="card-header"><h1>Sve narudžbe</h1></div>
 
-            <div class="card-body" >
+            <div class="card-body" ><div class="links">
                <h4> Sortiraj po
                 @sortablelink('created_at','Datumu')
                 @sortablelink('billing_name','Imenu')
                 @sortablelink('billing_total','Cijeni')
                </h4>
+                </div>
             @auth
                 @if(Auth::user()->isSuperAdmin() || Auth::user()->isAdmin())
 
@@ -54,3 +55,10 @@
 
 
 @endsection
+<script type="text/javascript">
+    function autoRefreshPage()
+    {
+        window.location = window.location.href;
+    }
+    setInterval('autoRefreshPage()', 10000);
+</script>

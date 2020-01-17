@@ -75,7 +75,7 @@ class OrdersController extends Controller
     }
     public function admin()
     {
-        $orders =Order::sortable()->paginate(30);; // fix n + 1 issues
+        $orders =Order::sortable(['created_at'=>'desc'])->paginate(30);; // fix n + 1 issues
         return view('all-orders')->with('orders', $orders);
 
 

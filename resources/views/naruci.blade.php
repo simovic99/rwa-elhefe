@@ -14,11 +14,11 @@
                                 {{ session('status') }}
 
                             </div>
-                        @endif
+                        @endif<div class="links">
                         Sortiraj po
 
-                         @sortablelink('price','Cijena')
-                        @sortablelink('product_name','Ime')
+                         @sortablelink('price','Cijeni')
+                            @sortablelink('product_name','Imenu')</div>
                         <hr>
 
 
