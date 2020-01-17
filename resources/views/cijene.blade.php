@@ -24,7 +24,7 @@
                                     <tr>  <td>  Cijena:</td> </tr>
                                     <tr> <td><form action="cijene"  method = "post">
                                                 {{ csrf_field() }}
-                                                <input type="number" class="cijena"ame="price" value={{ $product->price }}><input type="hidden" name="id" value={{$product->id}}> </input>KM
+                                                <input type="number" class="cijena" name="price" value={{ $product->price }}><input type="hidden" name="id" value={{$product->id}}> </input>KM
                                              <hr>
 
                                       <input type="submit" class="btn btn-primary"  value="Promjeni"/></form> </td>  </tr>
