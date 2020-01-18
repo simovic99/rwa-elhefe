@@ -31,7 +31,7 @@
                         <tr><td>Order ID:</td><td> {{ $order->id }}</td></tr>
                         <tr>
                             <td>Korisnik ime:</td>
-                            <td>{{ $order->user->name }}</td>
+                            <td>@if(isset($order->user->name)) {{$order->user->name}} @else Korisnik izbrisan @endif</td>
                         </tr>
                         <tr><td>Korisnik ID:</td><td> {{$order->user_id}}</td></tr>
                         <tr><td>Ime</td><td> {{ $order->billing_name }}</td></tr>
