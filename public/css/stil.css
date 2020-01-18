@@ -183,7 +183,12 @@ body {
     text-decoration: none;
     text-transform: uppercase;
 }
-
+.potvrdi{
+    background-color: #2fa360;
+}
+.odbij{
+    background-color: red;
+}
 .m-b-md {
     margin-bottom: 30px;
 }

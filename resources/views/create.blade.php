@@ -10,6 +10,7 @@
                     <div class="card-body">
 
                         <form action="{{route('spremi')}}" id="form1"method="post">
+                            {{ csrf_field() }}
                             <table class="table-responsive-xl">
                                 <tr>  <td> Naziv </td> <td><input type="text" name="product_name" /> </td></tr>
                                 <tr> <td>   Opis     </td> <td>      <input type="text" name="product_desc"/> </td></tr>

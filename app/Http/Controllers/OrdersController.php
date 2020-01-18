@@ -3,6 +3,8 @@ namespace App\Http\Controllers;
 use App\Order;
 use App\OrderProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 class OrdersController extends Controller
 {
     /**
@@ -88,6 +90,21 @@ class OrdersController extends Controller
             'order' => $order,
             'products' => $products,
         ]);
+    }
+    public function potvrda(Request $request){
+
+       // $x=$request->input('potvrda');
+     //   $id=$request->input('id');
+     //   DB::update('update orders set status=? where id = ? ',[$x,$id]);
+       $order= Order::find($request->id);
+       $order->status=$request->status;
+       $order->save();
+
+    return $this->admin();
+
+
+
+
     }
     /**
      * Remove the specified resource from storage.

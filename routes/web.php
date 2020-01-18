@@ -47,6 +47,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/my-order/{order}', 'OrdersController@show')->name('orders.show');
 });
 Route::get('/all-orders', 'OrdersController@admin')->name('all-orders');
+Route::post('/all-orders', 'OrdersController@potvrda')->name('all-orders-potvrda');
 Route::get('/all-order/{order}', 'OrdersController@adminshow')->name('all-orders.show');
 //URL::forceRootUrl('http://studenti.sum.ba/projekti/fsre/2019/g7');
 

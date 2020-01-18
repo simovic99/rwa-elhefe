@@ -39,6 +39,8 @@
                                 <td>Telefon</td>
                                 <td>{{ $order->billing_phone }}</td>
                             </tr>
+                            <tr> <td>Status:</td><td><?php if(!isset($order->status)){ echo "NA ČEKANJU"; } elseif ($order->status==1){ echo  "POTVRĐENA NARUDŽBA"; } elseif($order->status==2) {echo "ODBIJENA NARUDŽBA";}  ?></td></tr>
+
                             </tbody>
                         </table>
             <hr>

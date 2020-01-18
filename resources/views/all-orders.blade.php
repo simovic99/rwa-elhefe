@@ -37,6 +37,7 @@
                         <tr><td>Ime</td><td> {{ $order->billing_name }}</td></tr>
                         <tr><td>Datum: </td><td>{{($order->created_at) }} </td></tr>
                         <tr><td>Ukupno: </td><td>{{ ($order->billing_total) }} KM </td></tr>
+                        <tr><td>Status: </td><td> <?php if(!isset($order->status)){ echo "NA ČEKANJU"; } elseif ($order->status==1){ echo  "POTVRĐENA NARUDŽBA"; } elseif($order->status==2) {echo "ODBIJENA NARUDŽBA";} ?> </</td></tr>
                         <tr><td colspan="2"> <a href="{{ route('all-orders.show', $order->id) }}"><button class="btn btn-primary">Detalji</button></a></td></tr>
 
                         </tbody>

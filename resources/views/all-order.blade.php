@@ -84,6 +84,13 @@
 
 
                 </table>
+                        <form method="post" action="{{ route('all-orders-potvrda' )}}">
+                            {{ csrf_field() }}
+                            &nbsp;&nbsp;<input type="hidden" name="id" value="{{$order->id}}"/>
+                            <button  value="1" name="status" class="btn btn-primary potvrdi">Potvrdi</button>
+
+                    <button  value="2"  name="status" class="btn btn-primary odbij">Odbij</button>
+                        </form>
 @endif
                     @else Nemate dozvolu
                     @endauth
@@ -93,3 +100,6 @@
     </div>
 
 @endsection
+<script>
+
+</script>
