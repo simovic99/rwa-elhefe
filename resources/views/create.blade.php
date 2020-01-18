@@ -12,7 +12,7 @@
                         <form action="{{route('spremi')}}" id="form1"method="post">
                             {{ csrf_field() }}
                             <table class="table-responsive-xl">
-                                <tr>  <td> Naziv </td> <td><input type="text" name="product_name" /> </td></tr>
+                                <tr>  <td> Naziv </td> <td><input type="text" name="name" /> </td></tr>
                                 <tr> <td>   Opis     </td> <td>      <input type="text" name="product_desc"/> </td></tr>
                                 <tr>    <td>  Slika    </td> <td>   <input type="text" name="product_img_name" /> </td></tr>
                                 <tr>  <td>  Cijena   </td> <td>     <input type="number" name="price" /> </td></tr>

@@ -46,11 +46,14 @@ class ProductsController extends Controller
     {
 
           $product=Product::create([
+
+              'product_name'=>$request->name,
             'price' => $request->price,
             'product_img_name' => $request->product_img_name,
             'product_desc' => $request->product_desc,
     ]);
           return $product;
+
 
 }
     /**
@@ -74,7 +77,7 @@ class ProductsController extends Controller
     public function store(Request $request)
 {
       $product=  $this->create1($request);
-        return view('cijene');
+        return redirect()->route('cijene');
 }
 
     /**
@@ -113,8 +116,12 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
+        $id=$request->input('id1');
         //
+        DB::delete('delete from products where id =?',[$id]);
+
+        return redirect()->route('cijene');
     }
 }

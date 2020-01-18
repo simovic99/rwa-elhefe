@@ -27,8 +27,12 @@
                                                 <input type="number" class="cijena" name="price" value={{ $product->price }}><input type="hidden" name="id" value={{$product->id}}> </input>KM
                                              <hr>
 
-                                      <input type="submit" class="btn btn-primary"  value="Promjeni"/></form> </td>  </tr>
-
+                                      <input type="submit" class="btn btn-primary potvrdi"  value="Promjeni"/></form> </td>  </tr>
+                                    <tr><td> <form id="forma2" method="POST" action="{{route('izbrisi',$product)}}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="hidden" name="id1" value={{$product->id}}>
+                                                <input type="submit" class="btn btn-primary odbij" value="Izbriši "/></form> </td> </tr>
                                     </tbody>
                                 </table>
 

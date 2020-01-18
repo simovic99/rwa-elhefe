@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7f73e997-7123-4155-b5bd-1c7eab5cec6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cijene.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cijene.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -312,7 +315,9 @@
       <workItem from="1579354630190" duration="1113000" />
       <workItem from="1579356461839" duration="1780000" />
       <workItem from="1579358301298" duration="1967000" />
-      <workItem from="1579360403464" duration="108000" />
+      <workItem from="1579360403464" duration="185000" />
+      <workItem from="1579360946775" duration="1794000" />
+      <workItem from="1579362768479" duration="141000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1574890867296</created>
@@ -594,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579359997618</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="moje narudzbe sort">
+      <created>1579360565844</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1579360565844</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -640,7 +652,8 @@
     <MESSAGE value="auto-refresh all-orders" />
     <MESSAGE value="korisnik izbrisan sve narudzbe" />
     <MESSAGE value="potvrdi/odbij narudžbu" />
-    <option name="LAST_COMMIT_MESSAGE" value="potvrdi/odbij narudžbu" />
+    <MESSAGE value="moje narudzbe sort" />
+    <option name="LAST_COMMIT_MESSAGE" value="moje narudzbe sort" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
