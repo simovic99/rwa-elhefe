@@ -20,11 +20,11 @@
                                     <tr><td><h3>{{$product->product_name}}</h3></td></tr>
                                     <tbody><tr><td><img class="slike"  src="{{ asset($product->product_img_name)}}"/></td></tr>
 
-                                    <tr>     <td><strong>Opis: </strong>{{ $product->product_name}}</td></tr>
+                                    <tr>     <td><strong>Opis: </strong>{{ $product->product_desc}}</td></tr>
                                     <tr>  <td>  Cijena:</td> </tr>
                                     <tr> <td><form action="cijene"  method = "post">
                                                 {{ csrf_field() }}
-                                                <input type="number" class="cijena" name="price" value={{ $product->price }}><input type="hidden" name="id" value={{$product->id}}> </input>KM
+                                                <input type="number" step="0.1" class="cijena" name="price" value={{ $product->price }}><input type="hidden" name="id" value={{$product->id}}> </input>KM
                                              <hr>
 
                                       <input type="submit" class="btn btn-primary potvrdi"  value="Promjeni"/></form> </td>  </tr>
