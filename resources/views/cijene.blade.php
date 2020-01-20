@@ -17,7 +17,7 @@
                         @foreach ($products as $product)
                             <div class="large-3 columns ">
                                 <table class="tablice">
-                                    <th><h3>{{$product->product_name}}</h3></th>
+                                    <tr><td><h3>{{$product->product_name}}</h3></td></tr>
                                     <tbody><tr><td><img class="slike"  src="{{ asset($product->product_img_name)}}"/></td></tr>
 
                                     <tr>     <td><strong>Opis: </strong>{{ $product->product_name}}</td></tr>
@@ -33,7 +33,7 @@
                                                 @method('DELETE')
                                                 <input type="hidden" name="id1" value={{$product->id}}>
                                                 <input type="submit" class="btn btn-primary odbij" value="Izbriši "/></form> </td> </tr>
-                                    </tbody>s
+                                    </tbody>
                                 </table>
 
                             </div>
