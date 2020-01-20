@@ -33,7 +33,7 @@
                                                 @method('DELETE')
                                                 <input type="hidden" name="id1" value={{$product->id}}>
                                                 <input type="submit" class="btn btn-primary odbij" value="Izbriši "/></form> </td> </tr>
-                                    </tbody>
+                                    </tbody>s
                                 </table>
 
                             </div>

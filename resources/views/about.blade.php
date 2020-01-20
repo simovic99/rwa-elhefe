@@ -9,7 +9,7 @@
 
                     <div class="card-body">
 
-                        <a href="#">Vizija</a><br>
+                        <a href="{{asset('vizija.docx')}}">Vizija</a><br>
 
 
                     </div>
