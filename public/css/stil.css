@@ -108,6 +108,7 @@ body {
 }
 .slike1{
     width:150px;
+    height:150px;
     border-radius: 20%;
 }
 .card-header{
