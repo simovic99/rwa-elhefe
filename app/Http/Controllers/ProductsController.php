@@ -26,7 +26,7 @@ class ProductsController extends Controller
     public function index2()
     {
        // $products= DB::select('select  product_name,product_desc,price,product_img_name from products');
-            $products=Product::sortable()->paginate(30);
+            $products=Product::sortable(['price'=>'desc'])->paginate(30);
 
         return view('naruci',compact('products'));
     }
