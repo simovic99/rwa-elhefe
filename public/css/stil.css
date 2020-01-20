@@ -167,10 +167,11 @@ body {
 @media only screen and (min-width:374px) and (max-width:600px ){
     .slike{
         width:150px;
+        height:150px;
     }
     .slike1{
         width:50px;
-
+        height: 50px;
     }
     .kolicina{
         width:25%;
