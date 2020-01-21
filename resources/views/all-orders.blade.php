@@ -37,7 +37,7 @@
                         <tr><td>Ime</td><td> {{ $order->billing_name }}</td></tr>
                         <tr><td>Datum: </td><td>{{($order->created_at) }} </td></tr>
                         <tr><td>Ukupno: </td><td>{{ ($order->billing_total) }} KM </td></tr>
-                        <tr><td>Status: </td><td id="id{{$order->id}}"> <?php if(!isset($order->status)){ echo "NA ČEKANJU"; } elseif ($order->status==1){ echo  "POTVRĐENA NARUDŽBA"; } elseif($order->status==2) {echo "ODBIJENA NARUDŽBA";} ?> </</td></tr>
+                        <tr><td>Status: </td><td id="id{{$order->id}}"> <?php if(!isset($order->status)){ echo "<div id='x".$order->id."'>NA ČEKANJU </div>"; echo "<script type='text/javascript'>document.getElementById('x".$order->id."').style.color='#347deb'</script>";  } elseif ($order->status==1){ echo  "<div id='x".$order->id."'> POTVRĐENA NARUDŽBA </div>";  echo "<script type='text/javascript'>document.getElementById('x".$order->id."').style.color='green'</script>"; } elseif($order->status==2) {echo "<div id='x".$order->id."' >ODBIJENA NARUDŽBA </div>"; echo "<script type='text/javascript'>document.getElementById('x".$order->id."').style.color='red'</script>";} ?> </td></tr>
                         <tr><td colspan="2"> <a href="{{ route('all-orders.show', $order->id) }}"><button class="btn btn-primary">Detalji</button></a></td></tr>
 
                         </tbody>
