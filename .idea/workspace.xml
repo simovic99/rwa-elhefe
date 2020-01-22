@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7f73e997-7123-4155-b5bd-1c7eab5cec6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -325,21 +324,7 @@
       <workItem from="1579624120027" duration="1836000" />
       <workItem from="1579626165230" duration="829000" />
       <workItem from="1579682814023" duration="1734000" />
-      <workItem from="1579698445117" duration="83000" />
-    </task>
-    <task id="LOCAL-00005" summary="update">
-      <created>1575378011244</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1575378011244</updated>
-    </task>
-    <task id="LOCAL-00006" summary="update">
-      <created>1575466040654</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1575466040655</updated>
+      <workItem from="1579698445117" duration="227000" />
     </task>
     <task id="LOCAL-00007" summary="update">
       <created>1575466539674</created>
@@ -670,7 +655,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579684074603</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="https">
+      <created>1579698549011</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1579698549012</updated>
+    </task>
+    <task id="LOCAL-00055" summary="https">
+      <created>1579698617266</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1579698617266</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -722,7 +721,8 @@
     <MESSAGE value="js" />
     <MESSAGE value="vizija" />
     <MESSAGE value="aa" />
-    <option name="LAST_COMMIT_MESSAGE" value="aa" />
+    <MESSAGE value="https" />
+    <option name="LAST_COMMIT_MESSAGE" value="https" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
