@@ -92,7 +92,7 @@
                     <button  value="2"  name="status" class="btn btn-primary odbij">Odbij</button>
                         </form>
 @endif
-                    @else Nemate dozvolu
+                    @else Ne dam uci
                     @endauth
 
             </div>

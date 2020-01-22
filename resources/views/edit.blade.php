@@ -55,7 +55,7 @@
 
                             @endif
 
-                            @else NISTE SUPERADMIN
+                            @else nedam uci
 
                         @endauth
 

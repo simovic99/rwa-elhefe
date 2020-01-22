@@ -48,7 +48,7 @@
                     <hr>
                 @endforeach
                     @endif
-                @else Nemate dozvolu
+                @else Nedam uci
                 @endauth
             </div>
         </div>
